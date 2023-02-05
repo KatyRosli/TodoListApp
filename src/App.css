@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --header-font: 'Oswald', sans-serif;
+  --body-font: 'Quicksand', sans-serif;
+  --background-color: linear-gradient(-270deg, rgba(24,26,36,1) 0%, rgba(43,35,100,1) 100%);
+  --primary-color: linear-gradient(90deg, rgba(57,109,245,1) 0%, rgba(126,44,203,1) 100%);
+  --secondary-color: #3976E9;
+  --warning-color: #EA5F72;
+  --tertiary-color: #F5F5F5;
+  --input-color: #2E3344;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: var(--background-color);
+  color: var(--tertiary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1, 
+h2 {
+  font-family: var(--header-font);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.createToDoForm {
+  padding-bottom: 24px;
+  border-width: 0.5px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--tertiary-color);
+  margin-bottom: 40px;
+}
+
+label,
+input {
+  font-family: var(--body-font);
+  margin: 4px 0 16px 0;
+  font-weight: 600;
+}
+
+input {
+  border-radius: 24px;
+  border-style: none;
+  padding: 8px 16px;
+  background-color: var(--input-color);
+  color: var(--tertiary-color);
+}
+
+.createToDo__submit {
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 24px;
+  border-style: none;
+  background: var(--primary-color);
+  padding: 8px 16px;
+  color: var(--tertiary-color);
+}
+
+h3 {
+  font-family: var(--body-font);
+  font-size: 16px;
+  color: var(--warning-color);
+  font-weight: 600;
+}
+
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0;
+  border-width: 0.5px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--tertiary-color);
 }
 
-.App-link {
-  color: #61dafb;
+.todo__title {
+  font-weight: 600;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.todo__description {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.todo--toggle-completed {
+  accent-color: var(--secondary-color);
+  margin: 8px 0 4px 0;
+  border-radius: 8px;
+  width: 100%;
+  height: 32px;
+}
+
+.todo__button--remove {
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 24px;
+  border-style: none;
+  background: var(--warning-color);
+  padding: 4px 16px;
+  margin: 16px 0;
+  color: var(--tertiary-color);
+}
+
+@media (min-width: 320px) {
+  body {
+    margin: 8px;
+    padding: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  input {
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 16px;
+    padding: 24px;
+  }
+  input {
+    width: 60%;
+  }
+
+  li {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    margin-bottom: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    margin: 32px;
+    padding: 32px 32px 40px 32px;
+  }
+
+  input {
+    width: 50%;
+  }
+
+  li {
+    position: relative;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    margin-bottom: 8px;
   }
 }
