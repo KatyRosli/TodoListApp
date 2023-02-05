@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
    return (
-    <Footer>
+    <footer>
         <a
-        href='https://github.com/KatyRosli'
+        href='https://github.com/KatyRosli/TodoListApp'
         target="_blank"
         rel="noopener noreferrer"
         className="github"
@@ -21,7 +21,7 @@ const Footer = () => {
         {" "}
         Katy Rosli
         </a>
-    </Footer>
+    </footer>
    );
 }
 
